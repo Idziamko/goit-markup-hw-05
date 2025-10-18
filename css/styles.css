@@ -557,7 +557,7 @@ h3 {
     padding-bottom: 100px;
 }
 
-.footer .container {
+.footer-container {
     display: flex;
     align-items: baseline;
 }
@@ -565,12 +565,11 @@ h3 {
 /* Logo block */
 .footer-logo-wrap {
     max-width: 264px;
-    /* Added margin-right instead of gap on the container */
     margin-right: 120px;
 }
 
 .footer-logo {
-    font-family: "Raleway", sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 18px;
     line-height: 1.17;
@@ -597,6 +596,9 @@ h3 {
 }
 
 /*#region Styles for social media block */
+.footer-social-block {
+    margin-right: 80px;
+}
 
 /* Title "Social media" */
 .footer-social-text {
@@ -646,4 +648,374 @@ h3 {
 
 /*#endregion Styles for social media block */
 
+/*#region Subscribe form styles */
+
+/* Title "Subscribe" */
+.footer-subscribe-text {
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+/* Container for the form (Input + Button) */
+.footer-form {
+    display: flex;
+    gap: 24px;
+}
+
+/* Email input field */
+.footer-form-input {
+    width: 264px;
+    height: 40px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    background-color: transparent;
+    padding-left: 16px;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-form-input::placeholder {
+    color: #ffffff;
+}
+
+.footer-form-input:focus {
+    border-color: #4d5ae5;
+    outline: none;
+}
+
+/* "Subscribe" button */
+.subscribe-btn {
+    min-width: 165px;
+    height: 40px;
+    padding: 8px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    background-color: #4d5ae5;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+    background-color: #404bbf;
+}
+
+/* "Send" icon */
+.subscribe-icon {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff;
+}
+
+/*#endregion Subscribe form styles */
+
 /*#endregion Footer */
+
+/*#region Main form + Overlay */
+
+/*#region MODAL WINDOW STYLES */
+
+/* Backdrop/Overlay for modal window */
+.model-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Class for displaying modal */
+.model-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/*#endregion*/
+
+/*#region MODAL CONTAINER */
+
+/* Modal window itself */
+.model {
+    position: relative;
+    width: 408px;
+    min-height: 584px;
+    background-color: #fcfcfc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+        0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+    padding: 72px 24px 24px 24px;
+    transform: scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scale effect when modal is closed */
+.model-overlay:not(.is-open) .model {
+    transform: scale(0.9);
+}
+
+/*#endregion*/
+
+/*#region CLOSE BUTTON */
+
+/* Close button styling */
+.model-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover and focus effects for button */
+.model-close-btn:hover,
+.model-close-btn:focus {
+    background-color: #404bbf;
+    border: 1px solid #404bbf;
+}
+
+/* Icon styling */
+.model-close-icon {
+    fill: #2e2f42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Style for icon inside button (changes color on button hover) */
+.model-close-btn:hover .model-close-icon,
+.model-close-btn:focus .model-close-icon {
+    fill: #ffffff;
+}
+
+/*#endregion*/
+
+/*#region MODAL TITLE */
+
+/* Modal window title */
+.model-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    margin-bottom: 16px;
+}
+
+/*#endregion*/
+
+/*#region MODAL FORM STYLES */
+
+/* Wrapper for a form field (label + input) */
+.model-form-field-wrapper {
+    margin-bottom: 8px;
+}
+
+/* Wrapper for input and icon */
+.input-wrap {
+    position: relative;
+}
+
+/* Form labels (Name, Phone, Email, Comment) */
+.model-form-label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+}
+
+/* Input and textarea fields styling */
+.model-form-input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    padding-left: 38px;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus effect on input fields */
+.model-form-input:focus {
+    border-color: #4d5ae5;
+    outline: none;
+}
+
+/* Icon inside the input field */
+.model-form-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: #2e2f42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Icon color change on input focus */
+.model-form-input:focus+.model-form-icon {
+    fill: #4d5ae5;
+}
+
+/* Margin for the last text field ("Comment") before the checkbox */
+.model-form-comment-wrapper {
+    margin-bottom: 16px;
+}
+
+/* Textarea (Comment) */
+.model-form-textarea {
+    width: 100%;
+    height: 120px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    padding: 8px 16px;
+    outline: transparent;
+    resize: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.model-form-textarea::placeholder {
+    color: rgba(46, 47, 66, 0.4);
+}
+
+.model-form-textarea:focus {
+    border-color: #4d5ae5;
+}
+
+/*#endregion*/
+
+/*#region CUSTOM CHECKBOX */
+
+/* Checkbox block wrapper */
+.model-form-checkbox-wrapper {
+    margin-bottom: 24px;
+}
+
+/* General style for text and custom checkbox */
+.model-form-label-checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+}
+
+/* Visual representation of the checkbox (16x16 square) */
+.model-form-own-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+/* Effect when checkbox is activated */
+.model-form-checkbox:checked+.model-form-label-checkbox .model-form-own-checkbox {
+    background-color: #404bbf;
+    border: none;
+    fill: #f4f4fd;
+}
+
+/* "Privacy Policy" link */
+.privacy-policy-link {
+    color: #4d5ae5;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+}
+
+/*#endregion*/
+
+/*#region SUBMIT BUTTON */
+
+.model-send-btn {
+    display: block;
+    min-width: 169px;
+    height: 56px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #4d5ae5;
+    border: none;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0 auto;
+}
+
+.model-send-btn:hover,
+.model-send-btn:focus {
+    background-color: #404bbf;
+}
+
+/*#endregion*/
+
+/*#region UTILITY CLASSES */
+
+/* Visually hidden class for accessibility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/*#endregion*/
+
+/*#endregion Main form+Overlay*/

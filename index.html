@@ -511,7 +511,151 @@
             </li>
           </ul>
         </div>
+
+        <!-- Subscribe form block -->
+        <div class="footer-subscribe-wrap">
+          <!-- Subscribe form title -->
+          <p class="footer-subscribe-text">Subscribe</p>
+
+          <!-- Subscribe form (C3) -->
+          <form class="footer-form" name="subscribe-form">
+            <!-- Email input wrapper -->
+            <label class="footer-form-label">
+              <span class="visually-hidden">Email</span>
+              <input
+                type="email"
+                id="subscribe-email"
+                name="user-email"
+                class="footer-form-input"
+                placeholder="E-mail"
+                required
+              />
+            </label>
+
+            <!-- Submit button with icon -->
+            <button type="submit" class="subscribe-btn">
+              Subscribe
+              <!-- Send icon from SVG sprite (C10) -->
+              <svg class="subscribe-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
+
+    <!-- Model Overlay (backdrop, hidden by default) -->
+    <div class="model-overlay">
+      <!-- Model (modal window itself) -->
+      <div class="model">
+        <!-- Close button -->
+        <button type="button" class="model-close-btn">
+          <!-- Close icon from SVG sprite -->
+          <svg class="model-close-icon" width="8" height="8">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+
+        <!-- Form title -->
+        <p class="model-title">Leave your contacts and we will call you back</p>
+
+        <!-- Application form -->
+        <form class="model-form">
+          <!-- Field: Name -->
+          <div class="model-form-field-wrapper">
+            <label for="user-name" class="model-form-label">Name</label>
+            <div class="input-wrap">
+              <input
+                type="text"
+                id="user-name"
+                name="user-name"
+                class="model-form-input"
+                required
+              />
+              <!-- Icon (C10) -->
+              <svg class="model-form-icon" width="18" height="24">
+                <use href="./images/icons.svg#icon-person"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Field: Phone -->
+          <div class="model-form-field-wrapper">
+            <label for="user-phone" class="model-form-label">Phone</label>
+            <div class="input-wrap">
+              <input
+                type="tel"
+                id="user-phone"
+                name="user-phone"
+                class="model-form-input"
+                required
+              />
+              <!-- Phone icon -->
+              <svg class="model-form-icon" width="18" height="24">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Field: Email -->
+          <div class="model-form-field-wrapper">
+            <label for="user-email" class="model-form-label">Email</label>
+            <div class="input-wrap">
+              <input
+                type="email"
+                id="user-email"
+                name="user-email"
+                class="model-form-input"
+                required
+              />
+              <!-- Email icon -->
+              <svg class="model-form-icon" width="18" height="24">
+                <use href="./images/icons.svg#icon-email"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Field: Comment (Text input) -->
+          <div class="model-form-field-wrapper">
+            <label for="user-comment" class="model-form-label">Comment</label>
+            <textarea
+              id="user-comment"
+              name="user-comment"
+              class="model-form-input model-form-textarea"
+              placeholder="Text input"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <!-- Checkbox (D4, D5) -->
+          <div class="model-form-checkbox-wrapper">
+            <input
+              type="checkbox"
+              id="user-privacy"
+              name="user-privacy"
+              class="model-form-checkbox visually-hidden"
+              required
+            />
+            <label for="user-privacy" class="model-form-label-checkbox">
+              <!-- Custom checkbox styling element (D5) -->
+              <span class="model-form-own-checkbox">
+                <svg class="model-form-checkbox-icon" width="10" height="8">
+                  <use href="./images/icons.svg#icon-checked"></use>
+                </svg>
+              </span>
+              <!-- New wrapper for text and links -->
+              <span>
+                I accept the terms and conditions of the
+                <a href="" class="privacy-policy-link"> Privacy Policy</a>
+              </span>
+            </label>
+          </div>
+
+          <!-- Submit button (C9) -->
+          <button type="submit" class="model-send-btn hero-button">Send</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
