@@ -520,8 +520,8 @@
           <!-- Subscribe form (C3) -->
           <form class="footer-form" name="subscribe-form">
             <!-- Email input wrapper -->
-            <label class="footer-form-label">
-              <span class="visually-hidden">Email</span>
+            <div>
+              <label for="subscribe-email" class="visually-hidden">Email</label>
               <input
                 type="email"
                 id="subscribe-email"
@@ -530,7 +530,7 @@
                 placeholder="E-mail"
                 required
               />
-            </label>
+            </div>
 
             <!-- Submit button with icon -->
             <button type="submit" class="subscribe-btn">
@@ -617,7 +617,7 @@
           </div>
 
           <!-- Field: Comment (Text input) -->
-          <div class="model-form-field-wrapper">
+          <div class="model-form-field-wrapper model-form-comment-wrapper">
             <label for="user-comment" class="model-form-label">Comment</label>
             <textarea
               id="user-comment"
@@ -635,6 +635,7 @@
               id="user-privacy"
               name="user-privacy"
               class="model-form-checkbox visually-hidden"
+              value="true"
               required
             />
             <label for="user-privacy" class="model-form-label-checkbox">
