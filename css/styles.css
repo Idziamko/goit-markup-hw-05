@@ -667,13 +667,18 @@ h3 {
     gap: 24px;
 }
 
+/* Email label wrapper */
+.footer-email-label {
+    display: block;
+}
+
 /* Email input field */
 .footer-form-input {
     width: 264px;
     height: 40px;
     border: 1px solid #ffffff;
     border-radius: 4px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     background-color: transparent;
     padding-left: 16px;
     font-size: 12px;
@@ -685,8 +690,6 @@ h3 {
 
 .footer-form-input::placeholder {
     color: #ffffff;
-    opacity: 0.6;
-    /* Added opacity as per requirement */
 }
 
 .footer-form-input:focus {
@@ -969,6 +972,7 @@ h3 {
     fill: transparent;
     cursor: pointer;
     margin-right: 8px;
+    flex-shrink: 0;
 }
 
 /* Effect when checkbox is activated */
